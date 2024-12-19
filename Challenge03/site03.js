@@ -19,5 +19,14 @@ function convertIt() {
 
 //takes an array of strings and returns the longest one. 
 function convertToKm(kmValue) {
-   return 0;
+
+    let convertedNumber = kmValue * .6214;
+
+
+   return convertedNumber;
 }
+
+//write function that takes number as parameter
+//create a variable that holds the converted number
+//write a statement that calculates miles from km value
+//return converted number
