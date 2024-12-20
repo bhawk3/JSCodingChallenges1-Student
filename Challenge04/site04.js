@@ -129,7 +129,7 @@ function citySort() {
     sortByPopulation(cityData, "desc");
     
     //extra credit functions
-    //sortyByName(cityData);
+  //  sortyByName(cityData);
     //sortByAge(cityData, "asc");
     
     //used for display purposes. not need to change
@@ -146,6 +146,22 @@ function citySort() {
 //takes an array of objects and sorts by population. 
 function sortByPopulation(cityData, sortDir) {
     
+    cityData.sort((a, b) => {
+        let pa = a.population
+        let pb = b.population
+
+        let sortDir = 0;
+
+        if (pa < pb) {
+            sortDir = -1
+        } else if (pb < pa) {
+            sortDir = 1
+        }
+        return sortDir
+
+    })
+    
+    
 }
 
 //takes an array of objects and sorts by median age. 
@@ -155,5 +171,26 @@ function sortByAge(cityData, sortDir){
 
 //takes an array of objects and sorts by city name. 
 function sortyByName(cityData) {
-    
+   
+    cityData.sort((a, b) => {
+        let ca = a.city.toLowerCase()
+        let cb = b.city.toLowerCase()
+        let compare = 0;
+
+        if (ca < cb) {
+            compare = -1
+        } else if (cb < ca) {
+            compare = 1
+        }
+        return compare
+    })
+
 }
+
+
+//sort by name task:
+//create function that calls the city data
+//use .sort() to initialitize the sort
+//write var that holds the compare value so you can compare in the below step
+//write a comparer function to compare the names
+//return values in alphabetical order
