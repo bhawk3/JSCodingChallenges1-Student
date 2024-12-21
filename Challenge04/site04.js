@@ -152,9 +152,9 @@ function sortByPopulation(cityData, sortDir) {
 
         let sortDir = 0;
 
-        if (pa < pb) {
+        if (pa > pb) {
             sortDir = -1
-        } else if (pb < pa) {
+        } else if (pb > pa) {
             sortDir = 1
         }
         return sortDir

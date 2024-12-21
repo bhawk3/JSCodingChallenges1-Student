@@ -30,8 +30,54 @@ function checkAnagram() {
     document.getElementById("results").innerHTML = msg
 }
 
-//takes an two strings and determines if the are anagarms
+//takes in two strings and determines if the are anagarms
 //returns true or false
 function isAnagram(stringA, stringB) {
-   return false;
+
+   let firstString = stringA.split("").join("")
+    let secondString = stringB.split("").join("")
+
+    if (firstString.length !== secondString.length) {
+        return false;
+    } else {
+        firstString.toLowerCase()
+        secondString.toLowerCase()
+
+        firstString.split("").sort((a,b) => {
+            if (a < b) {
+                return -1;
+            } else if (a > b) {
+                return 1;
+            } 
+            return 0;
+        })
+
+
+
+        secondString.split("").sort((a,b) => {
+            if (a < b) {
+                return -1;
+            } else if (a > b) {
+                return 1;
+            } 
+            return 0;
+
+        })
+
+        if (firstString = secondString) {
+            return true;
+        }
+        return false;
+    }        
+
+
 }
+
+/*
+create a function that takes two strings as parameters
+remove all the spaces from both strings
+check if they are the same length. if not return false
+convert strings to lower case
+sort each string alphabetically
+check to see if the sorted strings are equal
+*/
