@@ -29,5 +29,33 @@ function checkPalindrome() {
 //returns true or false. 
 function isPalindrome(str) {
 
-    return false;
+    str = str.replace(/[^a-z]/g, '');
+    str.toLowerCase()
+    let reversed = "";
+
+    //reversing with decrementing loop
+    for (let i = str.length - 1; i >= 0; i--) {
+         reversed += str[i]
+    console.log(reversed)
+
+ }
+   if (reversed == str) {
+        return true;
+    }
+        return false;
+   //reversing with built-in array functions
+   
 }
+
+
+/*
+Create a function that takes a string as a parameter
+Remove special characters
+convert the string to lower case
+declare variable to hold reversed string
+reverse the string using a decrementing loop or built-in array functions
+compare the string to the reversed string
+return true or false
+display a message based on true or false
+
+*/
