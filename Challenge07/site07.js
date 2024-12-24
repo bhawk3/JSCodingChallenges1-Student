@@ -34,7 +34,7 @@ function isPalindrome(str) {
     let reversed = "";
 
     //reversing with decrementing loop
-    for (let i = str.length - 1; i >= 0; i--) {
+   /* for (let i = str.length - 1; i >= 0; i--) {
          reversed += str[i]
     console.log(reversed)
 
@@ -42,9 +42,15 @@ function isPalindrome(str) {
    if (reversed == str) {
         return true;
     }
-        return false;
+        return false;*/
+
    //reversing with built-in array functions
-   
+
+   reversed = str.split('').reverse().join('')
+
+   if (str == reversed) {
+    return true;
+   } return false;
 }
 
 
