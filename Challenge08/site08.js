@@ -6,12 +6,12 @@ function displayNumbers() {
     //implement the four functions to return sum, avg, max and min
     let sum = sumNumbers(numbers);
     let avg = avgNumber(numbers);
-    //let max = maxNumber(numbers);
+    let max = maxNumber(numbers);
     //let min = minNumber(numbers);
     //let sumRec = sumNumbersRecursive(numbers,index);
 
     //used for display not need to change unless you are doing only the sum function
-    let msg = `Sum = ${sum}<br>Avg = ${avg.toFixed(2)}`//<br>Max = ${max}<br>Min = ${min}`;
+    let msg = `Sum = ${sum}<br>Avg = ${avg.toFixed(2)}<br>Max = ${max}`//<br>Min = ${min}`;
     
     //display the message    
     document.getElementById("results").innerHTML = msg;
@@ -52,9 +52,15 @@ function avgNumber(numArry) {
 }
 
 //takes an array of numbers and returns the max number
-/*function maxNumber(numArry) {
-    return 0;
-}*/
+function maxNumber(numArry) {
+    let maxNum = 0;
+    for (let i = 0; i < numbers.length; i++) {
+        numbers.sort((a,b) => a - b)
+        maxNum = numbers[i]
+    }
+
+    return maxNum;
+}
 
 //takes an array of numbers and returns the min number
 /*function minNumber(numArry) {
