@@ -7,11 +7,11 @@ function displayNumbers() {
     let sum = sumNumbers(numbers);
     let avg = avgNumber(numbers);
     let max = maxNumber(numbers);
-    //let min = minNumber(numbers);
-    //let sumRec = sumNumbersRecursive(numbers,index);
+    let min = minNumber(numbers);
+    let sumRec = sumNumbersRecursive(numbers,index);
 
     //used for display not need to change unless you are doing only the sum function
-    let msg = `Sum = ${sum}<br>Avg = ${avg.toFixed(2)}<br>Max = ${max}`//<br>Min = ${min}`;
+    let msg = `Sum = ${sum}<br>Avg = ${avg.toFixed(2)}<br>Max = ${max}<br>Min = ${min}<br>Sum Recursion = ${sumRec}`;
     
     //display the message    
     document.getElementById("results").innerHTML = msg;
@@ -32,9 +32,20 @@ function sumNumbers(numArry) {
 //takes an array of numbers and the current index in the array and returns the sum of all the numbers using recursion
 //Recursion is the technique of the function calling itself. 
 //NOTE * SEE CHALLENGE 11. 
-/*function sumNumbersRecursive(numArry, index) {
-    return 0;
-}*/
+function sumNumbersRecursive(numArry, index) {
+
+    //Base case
+    if ( index == 0) {
+        
+        return 1
+    }
+
+    return index + sumNumbersRecursive(index)
+
+
+
+    //return sumNumbersRecursive();
+}
 
 
 //takes an array of numbers and returns the average of all the numbers
@@ -63,10 +74,16 @@ function maxNumber(numArry) {
 }
 
 //takes an array of numbers and returns the min number
-/*function minNumber(numArry) {
-   
-    return 0;
-}*/
+function minNumber(numArry) {
+   let minNum = 0;
+
+   for (let i = 0; i < numbers.length; i++) {
+        numbers.sort((a,b)=> b-a) 
+        minNum = numbers[i]
+   }
+
+    return minNum;
+}
 
 /*
 Create a function that takes an array as a parameter
